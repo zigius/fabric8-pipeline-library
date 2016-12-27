@@ -1,4 +1,5 @@
 #!groovy?
+import groovy.json.JsonOutput
 
 def call(text, channel) {
     def slackURL = 'https://hooks.slack.com/services/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'
