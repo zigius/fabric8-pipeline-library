@@ -8,7 +8,8 @@ def call(body) {
   body.delegate = config
   body()
 
-  echo config
+  echo config.branchName 
+  echo body
   echo "passed body parsing"
 
         // git config user.name 'ci.infra'
