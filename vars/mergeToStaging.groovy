@@ -8,7 +8,7 @@ def call(body) {
   body()
 
   env.BRANCH_NAME = config.branchName
-  git branch: config.branchName, credentialsId: config.credentialsId, url:config.url 
+  git branch: config.branchName, credentialsId: config.credentialsId, url:"https://${config.url}" 
 
   sh '''
     git config user.name 'ci.infra'
