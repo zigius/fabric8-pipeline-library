@@ -1,15 +1,14 @@
 #!groovy?
 def call(body) {
 
-    // evaluate the body block, and collect configuration into the object
+  echo "in github merge"
+  // evaluate the body block, and collect configuration into the object
   def config = [:]
-    body.resolveStrategy = Closure.DELEGATE_FIRST
-    body.delegate = config
-    body()
+  body.resolveStrategy = Closure.DELEGATE_FIRST
+  body.delegate = config
+  body()
 
-    sh '''
-        echo bulbulbul
-    '''
+  echo "passed body parsing"
 
         // git config user.name 'ci.infra'
         // git config user.email 'ci.infra@ironsource.com'
