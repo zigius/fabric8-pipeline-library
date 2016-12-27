@@ -9,14 +9,15 @@ def call(body) {
 
     sh '''
         echo bulbulbul
-        git config user.name 'ci.infra'
-        git config user.email 'ci.infra@ironsource.com'
-        git checkout staging
-        git merge ${config.branchName}
-        echo env.GIT_COMMIT=$(git rev-parse HEAD) > merge.properties
-        echo env.GIT_BRANCH=staging >> merge.properties
-        sed 's/$/"/g' -i merge.properties
-        sed 's/=/="/g' -i merge.properties
     '''
-    load ('merge.properties')
+
+        // git config user.name 'ci.infra'
+        // git config user.email 'ci.infra@ironsource.com'
+        // git checkout staging
+        // git merge ${config.branchName}
+        // echo env.GIT_COMMIT=$(git rev-parse HEAD) > merge.properties
+        // echo env.GIT_BRANCH=staging >> merge.properties
+        // sed 's/$/"/g' -i merge.properties
+        // sed 's/=/="/g' -i merge.properties
+    // load ('merge.properties')
 }
