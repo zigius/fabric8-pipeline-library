@@ -8,6 +8,7 @@ def call(body) {
     body()
 
     sh '''
+        echo bulbulbul
         git config user.name 'ci.infra'
         git config user.email 'ci.infra@ironsource.com'
         git checkout staging
