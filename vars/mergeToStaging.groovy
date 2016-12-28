@@ -7,14 +7,13 @@ def call(body) {
   body.delegate = config
   body()
 
-  env.BRANCH_NAME = config.branchName
-  env.CREDENTIALS_ID = config.credentialsId 
-  echo env.CREDENTIALS_ID
-  echo env.BRANCH_NAME
-  // git branch: config.branchName, credentialsId: config.credentialsId, url:"https://${config.url}" 
-  checkout scm
-
+  echo config.branchName
   echo config.credentialsId
+  echo config.url
+
+  // git branch: config.branchName, credentialsId: config.credentialsId, url:"https://${config.url}" 
+  // checkout scm
+
   withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: config.credentialsId, usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
 
     sh '''
