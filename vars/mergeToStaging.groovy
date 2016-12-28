@@ -15,8 +15,7 @@ def call(body) {
     sh '''
       git config user.name 'ci.infra'
       git config user.email 'ci.infra@ironsource.com'
-      git fetch
-      git checkout staging
+      git checkout origin/staging
       git merge ${BRANCH_NAME}
       echo env.GIT_COMMIT=$(git rev-parse HEAD) > merge.properties
       echo env.BRANCH_NAME=staging >> merge.properties
