@@ -9,6 +9,7 @@ def call(body) {
 
   echo config.branchName
   echo config.credentialsId
+  echo config.newCred
   echo config.url
 
   // git branch: config.branchName, credentialsId: config.credentialsId, url:"https://${config.url}" 
