@@ -8,7 +8,7 @@ def call(body) {
   body()
 
   env.BRANCH_NAME = config.branchName
-  env.CREDENTIALS_ID = config.branchName
+  env.CREDENTIALS_ID = config.credentialsId 
   echo env.CREDENTIALS_ID
   echo env.BRANCH_NAME
   // git branch: config.branchName, credentialsId: config.credentialsId, url:"https://${config.url}" 
