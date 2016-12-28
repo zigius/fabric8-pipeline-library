@@ -8,8 +8,9 @@ def call(body) {
   body()
 
   env.BRANCH_NAME = config.branchName
-  echo config.credentialsId
-  echo config.branchName
+  env.CREDENTIALS_ID = config.branchName
+  echo env.CREDENTIALS_ID
+  echo env.BRANCH_NAME
   // git branch: config.branchName, credentialsId: config.credentialsId, url:"https://${config.url}" 
   checkout scm
 
