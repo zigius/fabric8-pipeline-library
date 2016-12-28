@@ -7,8 +7,8 @@ def call(body) {
   body.delegate = config
   body()
 
-  git branch: config.branchName, credentialsId: config.cred, url:"https://${config.url}" 
-  // checkout scm
+  // git branch: config.branchName, credentialsId: config.cred, url:"https://${config.url}" 
+  checkout scm
 
   withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: config.cred, usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
 
