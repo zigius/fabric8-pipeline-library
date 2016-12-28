@@ -14,7 +14,7 @@ def call(body) {
   // git branch: config.branchName, credentialsId: config.credentialsId, url:"https://${config.url}" 
   // checkout scm
 
-  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: config.credentialsId, usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: config.cred, usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
 
     sh '''
       git config user.name 'ci.infra'
